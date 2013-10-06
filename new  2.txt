@@ -1,0 +1,13 @@
+self.rollTable = []
+      self.classRoll = []
+      # This for loop initialises the rollTable. Roll table is a list of lists.
+      # Each list inside rollTable contains the class name of that roll (e.g.
+      # bw101.2) as the first element. Each subsequent element of that list
+      # will be a student number
+      for line in self.classTable:
+         #Set first element as the class name
+         self.classRoll.append(line[0])
+         for line in readtable(os.path.join(dirname, line[0]+".roll")):
+            self.classRoll.append(line)
+         # Adding the list of students for this class to the rollTable
+         self.rollTable.append(self.classRoll)  
